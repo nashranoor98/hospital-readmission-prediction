@@ -21,7 +21,12 @@ In healthcare analytics, predicting patient readmissions can help identify patie
 
 ## Performance Metrics
 
-The model is evaluated on a held-out test set using ROC-AUC and a confusion matrix. The exact performance values are generated when `CaseStudy1.ipynb` is executed with the dataset.
+Evaluation on the held-out 20% test set:
+
+- **ROC-AUC Score:** `0.6462`
+- **Confusion Matrix:** `[[18039, 44], [2229, 42]]`
+
+(TN 18039 | FP 44 | FN 2229 | TP 42)
 
 ## Project Structure
 
