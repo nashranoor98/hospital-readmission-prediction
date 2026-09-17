@@ -10,10 +10,18 @@ A foundational machine learning pipeline designed to predict 30-day hospital rea
 
 In healthcare analytics, predicting patient readmissions can help identify patients who may need additional follow-up. This project applies data preprocessing, feature scaling and L2-regularized Logistic Regression to classify readmission risk.
 
+### Dataset
+
+The project uses the **Diabetes 130-US Hospitals for Years 1999–2008** dataset from the UCI Machine Learning Repository.
+
+**Dataset:** [UCI Machine Learning Repository — Diabetes 130-US Hospitals for Years 1999–2008](https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008)
+
+- **Instances:** 101,766
+- **Features:** 47
+- **Target:** `readmitted` — whether the patient was readmitted within 30 days (`<30`)
+
 ### Key Highlights
 
-* **Dataset:** UCI Diabetes 130-US Hospitals for Years 1999–2008 containing **101,766 patient records** and **47 features**.
-* **Target:** The `readmitted` field is used to identify patients readmitted within 30 days (`<30`).
 * **Exploratory Data Analysis (EDA):** Inspected patient and hospital-related features and the readmission classes.
 * **Feature Scaling:** Standardized numerical features before model training.
 * **Modeling:** Trained a **Logistic Regression** model with **L2 regularization**.
@@ -21,27 +29,29 @@ In healthcare analytics, predicting patient readmissions can help identify patie
 
 ## Performance Metrics
 
-Evaluation on the held-out 20% test split yielded the following predictive baseline performance:
+Evaluation on the held-out 20% test set:
 
-* **ROC-AUC Score:** `0.6462`
-* **Confusion Matrix:**
+- **ROC-AUC Score:** `0.6462`
+- **Confusion Matrix:**
 
-$$
-\begin{bmatrix}
-18039 & 44 \\
-2229 & 42
-\end{bmatrix}
-$$
+  $$
+  \begin{bmatrix}
+  18039 & 44 \\
+  2229 & 42
+  \end{bmatrix}
+  $$
 
 *(True Negatives: 18039 | False Positives: 44 | False Negatives: 2229 | True Positives: 42)*
+
+## Clinical Cost Considerations
+
+In this healthcare setting, a **false negative** means a patient who is actually readmitted within 30 days is predicted as low risk. Missing such patients may delay additional follow-up or preventive intervention. A **false positive** means a patient is flagged as high risk but is not actually readmitted, which may lead to additional monitoring or resource use.
 
 ## Project Structure
 
 ```text
 ├── CaseStudy1.ipynb
-├── requirements.txt
-└── data/
-    └── README.md
+└── README.md
 ```
 
 ## Getting Started & Replication
