@@ -39,4 +39,3 @@ Evaluation on the held-out 20% test set:
 
 You can launch and run this notebook in Google Colab or Jupyter Notebook using the UCI Diabetes 130-US Hospitals dataset.
 
-> This project is an academic machine learning case study intended for educational purposes.
