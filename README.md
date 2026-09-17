@@ -21,18 +21,27 @@ In healthcare analytics, predicting patient readmissions can help identify patie
 
 ## Performance Metrics
 
-Evaluation on the held-out 20% test set:
+Evaluation on the held-out 20% test split yielded the following predictive baseline performance:
 
-- **ROC-AUC Score:** `0.6462`
-- **Confusion Matrix:** `[[18039, 44], [2229, 42]]`
+* **ROC-AUC Score:** `0.6462`
+* **Confusion Matrix:**
 
-(TN 18039 | FP 44 | FN 2229 | TP 42)
+$$
+\begin{bmatrix}
+18039 & 44 \\
+2229 & 42
+\end{bmatrix}
+$$
+
+*(True Negatives: 18039 | False Positives: 44 | False Negatives: 2229 | True Positives: 42)*
 
 ## Project Structure
 
 ```text
 ├── CaseStudy1.ipynb
-└── README.md
+├── requirements.txt
+└── data/
+    └── README.md
 ```
 
 ## Getting Started & Replication
